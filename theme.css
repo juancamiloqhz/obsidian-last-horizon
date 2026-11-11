@@ -1,34 +1,166 @@
+/* Last Horizon: Obsidian port of the Omarchy "Last Horizon" theme.
+   Palette source: omarchy/themes/last-horizon/colors.toml */
+
+/* @settings
+name: Last Horizon
+id: last-horizon
+settings:
+    -
+        id: last-horizon-accent
+        title: Accent color
+        description: Links, active elements, selection and checkboxes
+        type: variable-themed-color
+        format: hex
+        default-light: '#8a6b64'
+        default-dark: '#b59790'
+*/
+
 body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+	--font-monospace-theme: "FiraCode Nerd Font Mono", "FiraCode Nerd Font", "Fira Code", ui-monospace, "SF Mono", "Cascadia Code", consolas, monospace;
+	--last-horizon-red: #c38b7b;
+	--last-horizon-green: #87a9b0;
+	--last-horizon-cyan: #a5a0b6;
+	--last-horizon-magenta: #c4d8e2;
+	--last-horizon-purple: #6b5e73;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+.theme-dark {
+	color-scheme: dark;
+
+	--last-horizon-accent: #b59790;
+	--color-base-00: #0c0b0c;
+	--color-base-05: #0f0e0f;
+	--color-base-10: #131213;
+	--color-base-20: #090809;
+	--color-base-25: #1e1d1e;
+	--color-base-30: #2a2729;
+	--color-base-35: #3a3437;
+	--color-base-40: #584e51;
+	--color-base-50: #6f6569;
+	--color-base-60: #8a8588;
+	--color-base-70: #b8b3b3;
+	--color-base-100: #e2dddc;
+	--mono-rgb-0: 6, 6, 6;
+	--mono-rgb-100: 226, 221, 220;
+	--color-red: var(--last-horizon-red);
+	--color-orange: #b59790;
+	--color-yellow: var(--last-horizon-purple);
+	--color-green: var(--last-horizon-green);
+	--color-cyan: var(--last-horizon-cyan);
+	--color-blue: var(--last-horizon-magenta);
+	--color-purple: var(--last-horizon-cyan);
+	--color-pink: var(--last-horizon-red);
+	--text-selection: rgb(88 78 81 / 60%);
+	--text-highlight-bg: rgb(107 94 115 / 55%);
+	--bold-color: #fafcfb;
+	--text-on-accent: #0c0b0c;
+	--text-on-accent-inverted: #0c0b0c;
+	--h1-color: #fafcfb;
+	--h2-color: var(--last-horizon-accent);
+	--h3-color: var(--last-horizon-cyan);
+	--h4-color: var(--last-horizon-green);
+	--h5-color: var(--last-horizon-magenta);
+	--h6-color: var(--color-base-60);
+	--code-background: #131213;
+	--code-normal: #cfd3cd;
+	--code-comment: #584e51;
+	--code-function: var(--last-horizon-magenta);
+	--code-keyword: var(--last-horizon-accent);
+	--code-operator: var(--last-horizon-red);
+	--code-property: var(--last-horizon-green);
+	--code-punctuation: #8a8588;
+	--code-string: var(--last-horizon-cyan);
+	--code-tag: var(--last-horizon-red);
+	--code-value: var(--last-horizon-accent);
+	--code-important: var(--last-horizon-red);
+	--background-modifier-border: #2a2729;
+	--background-modifier-border-hover: #3a3437;
+	--background-modifier-box-shadow: rgb(0 0 0 / 60%);
+	--background-modifier-cover: rgb(6 6 6 / 80%);
 }
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+.theme-light {
+	color-scheme: light;
+
+	--last-horizon-accent: #8a6b64;
+	--color-base-00: #f8f4f3;
+	--color-base-05: #f3eeed;
+	--color-base-10: #ede7e5;
+	--color-base-20: #ece6e4;
+	--color-base-25: #e2dbd9;
+	--color-base-30: #d6cecc;
+	--color-base-35: #c4bbb9;
+	--color-base-40: #a79ea1;
+	--color-base-50: #8a8588;
+	--color-base-60: #6f6569;
+	--color-base-70: #4a4044;
+	--color-base-100: #1f1b1d;
+	--mono-rgb-0: 255, 255, 255;
+	--mono-rgb-100: 31, 27, 29;
+	--color-red: #a8604f;
+	--color-orange: #8a6b64;
+	--color-yellow: #6b5e73;
+	--color-green: #4f7c85;
+	--color-cyan: #6d6785;
+	--color-blue: #4f7488;
+	--color-purple: #6d6785;
+	--color-pink: #a8604f;
+	--text-selection: rgb(181 151 144 / 35%);
+	--text-highlight-bg: rgb(165 160 182 / 45%);
+	--bold-color: #0c0b0c;
+	--text-on-accent: #f8f4f3;
+	--text-on-accent-inverted: #f8f4f3;
+	--h1-color: #0c0b0c;
+	--h2-color: var(--last-horizon-accent);
+	--h3-color: var(--color-cyan);
+	--h4-color: var(--color-green);
+	--h5-color: var(--color-blue);
+	--h6-color: var(--color-base-50);
+	--code-background: #ede7e5;
+	--code-normal: #4a4044;
+	--code-comment: #a79ea1;
+	--code-function: var(--color-blue);
+	--code-keyword: var(--last-horizon-accent);
+	--code-operator: var(--color-red);
+	--code-property: var(--color-green);
+	--code-punctuation: #6f6569;
+	--code-string: var(--color-cyan);
+	--code-tag: var(--color-red);
+	--code-value: var(--last-horizon-accent);
+	--code-important: var(--color-red);
+	--background-modifier-border: #d6cecc;
+	--background-modifier-border-hover: #c4bbb9;
+	--background-modifier-box-shadow: rgb(31 27 29 / 15%);
+	--background-modifier-cover: rgb(248 244 243 / 80%);
 }
 
-.menu {
-	padding: var(--size-2-1);
+.theme-dark,
+.theme-light {
+	--color-accent: var(--last-horizon-accent);
+	--color-accent-1: var(--last-horizon-accent);
+	--color-accent-2: var(--last-horizon-accent);
+	--interactive-accent: var(--last-horizon-accent);
+	--interactive-accent-hover: var(--last-horizon-accent);
+	--text-accent: var(--last-horizon-accent);
+	--text-accent-hover: var(--last-horizon-accent);
+	--link-color: var(--last-horizon-accent);
+	--link-color-hover: var(--last-horizon-accent);
+	--link-external-color: var(--color-cyan);
+	--link-external-color-hover: var(--color-cyan);
+	--tag-color: var(--last-horizon-accent);
+	--blockquote-border-color: var(--last-horizon-accent);
+	--list-marker-color: var(--color-base-50);
+	--list-marker-color-collapsed: var(--last-horizon-accent);
 }
 
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
-}
-
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+/* Sidebars and ribbon sit on the darker/secondary surface */
+.theme-dark {
+	--background-primary: var(--color-base-00);
+	--background-primary-alt: var(--color-base-10);
+	--background-secondary: var(--color-base-20);
+	--titlebar-background: var(--color-base-20);
+	--titlebar-background-focused: var(--color-base-20);
+	--ribbon-background: var(--color-base-20);
+	--ribbon-background-collapsed: var(--color-base-20);
+	--tab-container-background: var(--color-base-20);
 }
